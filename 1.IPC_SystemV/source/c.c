@@ -8,7 +8,7 @@
 #include "onepurch.h"
 
 
-int main() {
+int yuu() {
 
 char *s = "abcde";
 char *t = "12345";

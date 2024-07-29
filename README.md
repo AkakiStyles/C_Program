@@ -1,5 +1,9 @@
 # C_Program
 1.IPC_SystemV 
+ autoreconf --install
+ ./configure
+ make
+
 2.Multithread
 3.TcpIpSocket   
 

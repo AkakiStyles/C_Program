@@ -8,7 +8,7 @@
 #include "onepurch.h"
 
 
-int main() {
+int foo() {
 
 char *s = "abcde";
 char *t = "12345";
