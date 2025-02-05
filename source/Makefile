@@ -1,5 +1,10 @@
 CC = gcc
 CFLAGS = -I ../include
+DEBUG_FLAGS = -g -DIPCDEMO_DEBUG_FLAG
+
+# Make with debug mode
+debug: clean
+	$(MAKE) CFLAGS="$(CFLAGS) $(DEBUG_FLAGS)" all
 
 all: display server client
 

@@ -64,9 +64,24 @@
    ```bash
    ./client
    ```
-   依照提示，分別輸入 `ID`, `Msg`, 與 `Request Type`。
+   依照提示，分別輸入`Msg`， 與 `Request Type (E or D)`，
+   E代表將`Msg`加密，D則是將`Msg`解密(預設此為使用E加密過的資料)。
 
 `server` 收到後會將處理結果寫入共享記憶體；`display` 則會從共享記憶體中讀取結果並顯示，同時透過信號量與 `server` 做同步。
-
+從`display`顯示的畫面中可以用[Client ID]這個欄位來確定顯示的訊息來自哪個client及其請求的結果。
 ---
 
+## Debug模式
+
+1. 進入 `source` 資料夾：
+   ```bash
+   cd source
+   ```
+2. 執行 Makefile 進行編譯：
+   ```bash
+   make debug
+   ```
+
+如此會以 -g進行編譯開啟除錯資訊，server收到、執行的結果也會以HEX值顯示，除此之外皆與原本程式功能相同。
+
+---

@@ -5,8 +5,9 @@
 #include "demoipc.h"
 
 int GetShmSize() {
-    return (sizeof(int) + sizeof(stdef_DisplayInfo)*50);    
+    return (sizeof(int) + sizeof(stdef_DisplayInfo) * IPC_DEMO_ITEM_NUM);    
 }
+
 int CreateSemaphore() {
     int iSemId = semget( IPC_DEMO_SEM_KEY, 1, IPC_CREAT | 0666);
     if (iSemId == -1) {

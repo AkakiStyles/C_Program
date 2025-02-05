@@ -11,11 +11,13 @@
 #define IPC_DEMO_QUE_KEY 1234
 #define IPC_DEMO_SHM_KEY 5678
 #define IPC_DEMO_SEM_KEY 91011
+#define IPC_DEMO_ITEM_NUM 50
 
 struct stDemoeMsg {
     long lMtype;
     char caClientID[32];
     char caMsg[128];
+    int iRawMsgSize;
     char cType; /* 'E' for encryption, 'D' for decryption */
 };
 
@@ -26,9 +28,10 @@ struct stDisplayInfo {
 
 /* function protype for libtool */
 void Cleanup(int iSigno);
-void DemoEnc(char *caInput, char *caOutput); 
-void DemoDec(char *caInput, char *caOutput); 
-void PrintHex(const char * caLabel, const char * caData, size_t iLength);
+void DemoEnc(char *caInput, int iInputSize, char *caOutput, int iOutputSize); 
+void DemoDec(char *caInput, int iInputSize, char *caOutput, int iOutputSize);
+/* Debug function */ 
+void PrintHex(const char * caLabel, int iLabelSize, const char * caData, int iDataSize);
 
 /* function protype for libipc */
 int GetShmSize();
